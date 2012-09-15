@@ -82,6 +82,7 @@ default['php']['url'] = 'http://us1.php.net/get'
 default['php']['version'] = '5.5.9'
 default['php']['checksum'] = '378de162efdaeeb725ed38d7fe956c9f0b9084ff'
 default['php']['prefix_dir'] = '/usr/local'
+default['php']['memory_limit'] = '128M'
 
 default['php']['configure_options'] = %W{--prefix=#{php['prefix_dir']}
                                          --with-libdir=#{lib_dir}
