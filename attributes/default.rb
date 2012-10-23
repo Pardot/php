@@ -46,6 +46,7 @@ default['php']['version'] = '5.3.10'
 default['php']['checksum'] = 'ee26ff003eaeaefb649735980d9ef1ffad3ea8c2836e6ad520de598da225eaab'
 default['php']['prefix_dir'] = '/usr/local'
 default['php']['memory_limit'] = '128M'
+default['php']['timezone'] = 'US/Eastern'
 
 default['php']['configure_options'] = %W{--prefix=#{php['prefix_dir']}
                                           --with-libdir=#{lib_dir}
