@@ -455,7 +455,7 @@ max_input_time = 60
 
 ; Maximum amount of memory a script may consume (128MB)
 ; http://php.net/memory-limit
-memory_limit = -1
+memory_limit = <%= node['php']['memory_limit'] %>
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Error handling and logging ;
@@ -946,7 +946,7 @@ default_socket_timeout = 60
 [Date]
 ; Defines the default timezone used by the date functions
 ; http://php.net/date.timezone
-;date.timezone =
+date.timezone = "<%= node['php']['timezone'] %>"
 
 ; http://php.net/date.default-latitude
 ;date.default_latitude = 31.7667
