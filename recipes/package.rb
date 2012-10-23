@@ -34,17 +34,3 @@ pkgs.each do |pkg|
     action :install
   end
 end
-
-template "#{node['php']['conf_dir']}/php.ini" do
-  source "php.ini.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-end
-
-template "#{node['php']['apache_conf_dir']}/php.ini" do
-  source "php.ini.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-end
