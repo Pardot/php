@@ -87,6 +87,7 @@ default['php']['memory_limit'] = '128M'
 default['php']['max_execution_time'] = '30'
 default['php']['realpath_cache_size'] = '16k'
 default['php']['timezone'] = 'UTC'
+default['php']['short_open_tag'] = 'On'
 
 default['php']['configure_options'] = %W{--prefix=#{php['prefix_dir']}
                                          --with-libdir=#{lib_dir}
