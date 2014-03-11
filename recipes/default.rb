@@ -32,12 +32,6 @@ end
 
 include_recipe "php::ini"
 
-directory node['php']['apache_conf_dir'] do
-  owner "root"
-  group "root"
-  mode "0755"
-end
-
 template "#{node['php']['conf_dir']}/php.ini" do
   source "php.ini.erb"
   owner "root"
@@ -45,9 +39,17 @@ template "#{node['php']['conf_dir']}/php.ini" do
   mode "0644"
 end
 
-template "#{node['php']['apache_conf_dir']}/php.ini" do
-  source "php.ini.erb"
-  owner "root"
-  group "root"
-  mode "0644"
+if node['php']['apache_conf_dir']
+  directory node['php']['apache_conf_dir'] do
+    owner "root"
+    group "root"
+    mode "0755"
+  end
+
+  template "#{node['php']['apache_conf_dir']}/php.ini" do
+    source "php.ini.erb"
+    owner "root"
+    group "root"
+    mode "0644"
+  end
 end
