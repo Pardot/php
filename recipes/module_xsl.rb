@@ -23,4 +23,8 @@ when "debian", "ubuntu"
   package "php5-xsl" do
     action :install
   end
+when "centos", "redhat", "fedora"
+  package "php-xml" do
+    action :install
+  end
 end

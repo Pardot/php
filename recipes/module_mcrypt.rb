@@ -23,4 +23,11 @@ when "debian", "ubuntu"
   package "php5-mcrypt" do
     action :install
   end
+when "centos", "redhat", "fedora"
+  rpm_package "http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm" do
+    action :upgrade
+  end
+  package "php-mcrypt" do
+    action :install
+  end
 end
